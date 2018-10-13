@@ -316,19 +316,19 @@ function gameStart(randomizer, maxPlayerSpeedX, nitroMultiplication, shotAmount,
                 document.getElementById('player__life').classList.remove('medium-hit');
                 document.getElementById('player__life').classList.remove('hard-hit');
                 document.getElementById('player__life').classList.remove('cytical-hit');
-                console.log('cos1')
+
             } else if (playerLifePoints < 90 && playerLifePoints >= 80) {
                 document.getElementById('player__life').classList.add('soft-hit');
                 document.getElementById('player__life').classList.remove('medium-hit');
                 document.getElementById('player__life').classList.remove('hard-hit');
                 document.getElementById('player__life').classList.remove('cytical-hit');
-                console.log('cos2')
+
             } else if (playerLifePoints < 80 && playerLifePoints >= 40) {
                 document.getElementById('player__life').classList.remove('soft-hit');
                 document.getElementById('player__life').classList.add('medium-hit');
                 document.getElementById('player__life').classList.remove('hard-hit');
                 document.getElementById('player__life').classList.remove('cytical-hit');
-                console.log('cos4')
+
             } else if (playerLifePoints < 40 && playerLifePoints >= 30) {
                 document.getElementById('player__life').classList.remove('soft-hit');
                 document.getElementById('player__life').classList.remove('medium-hit');
@@ -848,6 +848,7 @@ function gameStart(randomizer, maxPlayerSpeedX, nitroMultiplication, shotAmount,
                 else if (event.code === 'ArrowLeft' || event.code === 'ArrowRight') {
                     stopAnimate();
                     animateStandingPlayer();
+                    normalMove = false;
                 }
             });
         })();
@@ -948,7 +949,7 @@ function gameStart(randomizer, maxPlayerSpeedX, nitroMultiplication, shotAmount,
                         'bottom': -10,
                         'width': tree.width,
                         'height': tree.width * 1,
-                        'z-index': Math.ceil(Math.random() * 4),
+                        'z-index': 20+Math.ceil(Math.random() * 4),
                     })
                 )
         });
